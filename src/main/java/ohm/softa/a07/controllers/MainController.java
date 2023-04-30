@@ -28,7 +28,7 @@ public class MainController implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				// create a new (observable) list and tie it to the view
-				ObservableList<String> list = FXCollections.observableArrayList("Hans", "Dampf");
+				ObservableList<String> list = FXCollections.observableArrayList("btnClose", "chkVegetarian");
 				mealsList.setItems(list);
 			}
 		});
