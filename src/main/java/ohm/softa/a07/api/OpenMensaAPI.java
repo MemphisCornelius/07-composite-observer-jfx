@@ -15,6 +15,6 @@ public interface OpenMensaAPI {
 	// TODO add method to get meals of a day
 	// example request: GET /canteens/229/days/2017-11-22/meals
 
-	@GET("/canteens/269/days/{date}/meals")
+	@GET("canteens/269/days/{date}/meals")
 	Call<List<Meal>> getMeals(@Path("date") String date);
 }

@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -19,6 +20,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class OpenMensaAPITests {
 
 	private static final Logger logger = LogManager.getLogger(OpenMensaAPITests.class);
@@ -46,8 +48,9 @@ class OpenMensaAPITests {
 
 	@Test
 	void testGetMeals() throws IOException {
+
 		// TODO prepare call
-		Call<List<Meal>> call = openMensaAPI.getMeals("2022-05-02");
+		Call<List<Meal>> call = openMensaAPI.getMeals("2023-05-02");
 
 		// TODO execute the call synchronously
 		Response<List<Meal>> response = call.execute();
